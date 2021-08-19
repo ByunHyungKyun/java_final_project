@@ -1,0 +1,67 @@
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+   <settings>
+      <setting name="mapUnderscoreToCamelCase" value="true"/>
+   </settings>
+
+	<typeAliases>
+		<typeAlias type="java.lang.String" alias="str" />
+		<typeAlias type="java.lang.Integer" alias="int" />
+		 
+		<typeAlias type="com.spring.dto.EmpVO" alias="emp" />
+		<typeAlias type="com.spring.dto.MenuVO" alias="menu" />
+		<typeAlias type="com.spring.dto.DepVO" alias="dep" />
+		<typeAlias type="com.spring.dto.RankVO" alias="rank" />
+		<typeAlias type="com.spring.dto.ProVO" alias="pro" />
+		<typeAlias type="com.spring.dto.PjmVO" alias="pjm" />
+		<typeAlias type="com.spring.dto.TotalKnowledgeVO" alias="tk" />
+		<typeAlias type="com.spring.dto.TkAttachVO" alias="tkAttach" />
+		<typeAlias type="com.spring.dto.CoPVO" alias="cop"/>
+		<typeAlias type="com.spring.dto.caAttachVO" alias="caAttach"/>
+		<typeAlias type="com.spring.dto.ProPjmVO" alias="propjm" />
+		<!-- <typeAlias type="com.spring.dto.AttachVO" alias="attach" /> -->
+		<typeAlias type="com.spring.dto.PAVO" alias="pa" />
+		<typeAlias type="com.spring.dto.PAAttachVO" alias="paattach" />
+		<typeAlias type="com.spring.dto.SmailVO" alias="smail" />
+		<typeAlias type="com.spring.dto.RmailVO" alias="rmail" />
+		<typeAlias type="com.spring.dto.ProEmpVO" alias="proEmp" />
+		<typeAlias type="com.spring.dto.NoticeVO" alias="notice" />
+		<typeAlias type="com.spring.dto.DepEmpVO" alias="depEmp" />
+		<typeAlias type="com.spring.dto.TrashVO" alias="trash" />
+		<typeAlias type="com.spring.dto.CopArchiveVO" alias="cArcVO"/>
+		<typeAlias type="com.spring.dto.CopFamilyDiscussionVO" alias="cFdVO"/>
+		<typeAlias type="com.spring.dto.JobVO" alias="job" />
+		<typeAlias type="com.spring.dto.RelegateVO" alias="relegate"/>
+		<typeAlias type="com.spring.dto.ProLogVO" alias="prolog"/>
+		<typeAlias type="com.spring.dto.TkReplyVO" alias="tkReply"/>
+		<typeAlias type="com.spring.dto.PIVO" alias="pi"/>
+		<typeAlias type="com.spring.dto.ScrapVO" alias="scrap"/>
+		<typeAlias type="com.spring.dto.LikeVO" alias="like"/>
+		<typeAlias type="com.spring.dto.ReportVO" alias="report"/>
+		<typeAlias type="com.spring.chat.ChatRoom" alias="chat"/>
+		<typeAlias type="com.spring.dto.MeetingVO" alias="meeting"/>
+		<typeAlias type="com.spring.dto.DailyReportVO" alias="dr"/>
+		<typeAlias type="com.spring.dto.WeeklyReportVO" alias="wr"/>
+		<typeAlias type="com.spring.dto.CopMemberVO" alias="copMemberVO"/>
+		<typeAlias type="com.spring.dto.shareProjectVO" alias="shareVO"/>
+		<typeAlias type="com.spring.dto.confirmRequestVO" alias="shareRequestVO"/>
+		<typeAlias type="com.spring.dto.KnowVO" alias="know"/>
+		<typeAlias type="com.spring.dto.AnswerVO" alias="answer"/>
+		<typeAlias type="com.spring.dto.AsReplyVO" alias="asReply"/>
+		<typeAlias type="com.spring.dto.PIReplyVO" alias="piReply"/>
+		<typeAlias type="com.spring.dto.familyDiscussionContentVO" alias="cFdContentVO"/>
+		<typeAlias type="com.spring.dto.PRBVO" alias="prb"/>
+		<typeAlias type="com.spring.dto.DfolderVO" alias="df"/>
+		<typeAlias type="com.spring.dto.DocumentVO" alias="document"/>
+		<typeAlias type="com.spring.dto.SystemVO" alias="system"/>
+		<typeAlias type="com.spring.dto.BoardSelectVO" alias="boardSelect"/>
+		<typeAlias type="com.spring.dto.QnaVO" alias="qna"/>
+		<typeAlias type="com.spring.dto.QreplyVO" alias="qreply"/>
+		<typeAlias type="com.spring.dto.AnswerLikeVO" alias="aLike"/>
+	</typeAliases>
+	
+</configuration>

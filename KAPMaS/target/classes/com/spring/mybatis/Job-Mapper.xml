@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="Job-Mapper">
+	
+	
+	<select id="getProJobListById2" parameterType="job" resultType="job">
+
+		select j.*, e.emp_name as empName 
+		from joblist j, employee e
+		where j.p_code=#{pCode} 
+		and j.emp_id=#{empId}
+		AND j.emp_id = e.emp_id
+	</select>
+	
+	
+	<select id="getJobList" parameterType="str" resultType="job"> 
+
+		select 
+		a.JOB_CODE as jobCode
+		,a.P_CODE as pCode
+		,a.EMP_ID as empId
+		,a.JOB_NAME as  jobName
+		,a.JOB_PROGRASS as jobPrograss
+		,a.JOB_CONTENT as jobContent
+		,a.JOB_STARTDATE as jobStartdate
+		,a.JOB_ENDDATE as jobEnddate
+		,a.JOB_ENABLED as jobEnabled
+		,a.JOB_FILE as jobFile
+		,(select emp_name
+           from employee
+         where EMP_ID=a.EMP_ID) as empName
+		from joblist a
+		where a.p_code=#{pCode}
+	
+	</select>
+
+	
+	<select id="getJobListById" parameterType="str" resultType="job">
+
+		select *
+		from joblist
+		where emp_id=#{empId}
+		order by job_prograss desc
+
+	</select>
+
+	
+	<select id="getProJobListById" parameterType="job" resultType="job">
+
+		select j.*, e.emp_name as empName 
+		from joblist j, employee e
+		where p_code=#{pCode} AND j.emp_id = e.emp_id
+		order by empName, job_startdate 
+		<!-- and emp_id=#{empId} -->
+	</select>
+
+
+	
+	<select id="getJobInfo" parameterType="str" resultType="job">
+		select *
+		from joblist
+		where job_code=#{jobCode}
+	</select>
+	
+	
+	<update id="insertJob" parameterType="job">
+		insert into 
+		joblist (JOB_CODE,P_CODE,EMP_ID,JOB_NAME,JOB_PROGRASS,JOB_CONTENT,JOB_STARTDATE,JOB_ENDDATE,JOB_ENABLED,JOB_FILE)
+		values(concat('j',JOBLIST_SEQ.NEXTVAL),#{pCode},#{empId},#{jobName},#{jobPrograss},#{jobContent},#{jobStartdate},#{jobEnddate},'1',#{jobFile})
+	
+	</update>
+	
+	
+	<update id="updateJob" parameterType="job">
+		update joblist 
+		set JOB_PROGRASS=#{jobPrograss},EMP_ID=#{empId},JOB_NAME=#{jobName},JOB_CONTENT=#{jobContent}
+		,JOB_STARTDATE=#{jobStartdate},JOB_ENDDATE=#{jobEnddate},JOB_FILE=#{jobFile}
+		where JOB_CODE=#{jobCode}
+	</update>
+	
+	<update id="doNotJob" parameterType="str">
+		update joblist
+		set JOB_ENABLED=0
+		where JOB_CODE=#{jobCode}
+	</update>
+	
+	<update id="doJob" parameterType="str">
+		update joblist
+		set JOB_ENABLED=1
+		where JOB_CODE=#{jobCode}
+	</update>
+	
+	
+	<select id="getServiceList" parameterType="job" resultType="job">
+		select j.*, e.emp_name as empName 
+		from joblist j, employee e
+		where j.p_code=#{pCode}
+		and JOB_FILE=#{jobFile}
+		AND j.emp_id = e.emp_id
+		
+	</select>
+	
+	
+	<update id="updateMember" parameterType="job">
+		update joblist
+		set EMP_ID=#{empId}
+		where JOB_CODE=#{jobCode}
+	</update>
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
